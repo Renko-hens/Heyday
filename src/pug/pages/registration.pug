@@ -1,0 +1,116 @@
+extends ../layout/index
+include ../utils/mixins.pug
+
+block variables
+  - var title = "Оформление";
+  - var description = "";
+  - pageClass = "basket"
+
+block content
+  - var n = 0;
+  include ../../mocks/flower.pug
+
+  section.main-basket#main-basket
+    form.main-basket__form
+      .main-basket__container.container
+        .main-basket__information
+          a.main-basket__link(href="/basket.html") 
+            <svg width="32" height="12" viewBox="0 0 32 12" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0.46967 5.46967C0.176777 5.76256 0.176777 6.23744 0.46967 6.53033L5.24264 11.3033C5.53553 11.5962 6.01041 11.5962 6.3033 11.3033C6.59619 11.0104 6.59619 10.5355 6.3033 10.2426L2.06066 6L6.3033 1.75736C6.59619 1.46447 6.59619 0.989592 6.3033 0.696699C6.01041 0.403806 5.53553 0.403806 5.24264 0.696699L0.46967 5.46967ZM32 5.25L1 5.25L1 6.75L32 6.75L32 5.25Z"/>
+            </svg>
+            |В корзину
+
+          include ../modules/forms/form-pay.pug
+
+        //- summary
+        article.summary
+          .summary__container
+            .summary__form.form
+              .summary__wrapper-title
+                h2.form__title Итого
+
+              .summary__wrapper-information
+                .summary__information
+                  span.summary__label Букетов (3)
+                  span.summary__value 2000 ₽
+
+                .summary__information
+                  span.summary__label Вы экономите
+                  span.summary__value 398 ₽
+
+                .summary__information
+                  p.summary__label Доставка
+                    //- button.summary__delivery-button(type="button") Выбрать адрес доставки
+                  span.summary__value.summary__value--delivery /бесплатно/
+
+                .summary__information  
+                  span.summary__label Итого
+                  span.summary__value 2000 ₽
+
+              //- .form__wrapper-description
+              //-   p.form__description 
+              //-     |Введите номер карты лояльности или промокод для получения скидки. 
+              //-     a(href="/" title="Ват?") Оформить карту лояльности?
+
+              //- .form__wrapper-input
+              //-   input.form__input(id="formNumber" type="text")
+              //-   label.form__label(for="formNumber") Номер карты лояльности
+              //-   .form__bar
+
+
+              //- .form__wrapper-input
+              //-   input.form__input(id="formPromocode" type="text")
+              //-   label.form__label(for="formPromocode") Промокод
+              //-   .form__bar
+
+              .form__wrapper-controls
+                button.form__button.button() Оплатить заказ
+                
+              .summary__wrapper-public
+                p.summary__public Согласен с условиями 
+                  a(href="/politics.html" title="Соглашение на обработку данных") Публичной оферты
+
+
+    //- map-delivery
+    article.route-map.route-map--delivery.route-map--hide
+      .route-map__container
+        button.button-close-popup(type="button")
+          <svg class="popup-basket__close-svg" width="32" height="32" fill="none">
+            <ellipse cx="8" cy="16" rx="1.5" ry="13"/>
+            <ellipse cx="24" cy="16" rx="1.5" ry="13"/>
+          </svg>
+
+
+        //- .route-map__placemarker#placemarker(style="position:absolute; top: 50%; left: 50%;z-index:2;")
+        //-   img(src="./assets/img/icons/subtract.svg", alt="subtract")
+
+        .route-map__controls
+          .form__wrapper-routes
+            .form__wrapper-input
+              input.form__input(id ="routeMapDelivery" name="routeMapDelivery" placeholder="УКАЖИТЕ АДРЕС ДОСТАВКИ" type="text")
+              .form__bar
+              button(type="button").input-close
+                <svg width="24" height="24" fill="none">
+                  <ellipse cx="6" cy="8" rx="0.75" ry="8"/>
+                  <ellipse cx="6" cy="8" rx="0.75" ry="8"/>
+                </svg>
+
+            //- .warning-icon 
+            //-   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            //-     <circle cx="8" cy="8" r="7.5" fill="#7573F3" stroke="white"/>
+            //-     <path d="M8.46345 11.154C8.32834 11.282 8.16834 11.346 7.98345 11.346C7.79856 11.346 7.63856 11.282 7.50345 11.154C7.36834 11.0189 7.30078 10.8553 7.30078 10.6633C7.30078 10.4713 7.36834 10.3113 7.50345 10.1833C7.63856 10.0482 7.79856 9.98068 7.98345 9.98068C8.16834 9.98068 8.32834 10.0482 8.46345 10.1833C8.59856 10.3113 8.66611 10.4713 8.66611 10.6633C8.66611 10.8553 8.59856 11.0189 8.46345 11.154ZM7.50345 3.66602H8.48478L8.33545 9.13802H7.65278L7.50345 3.66602Z" fill="white"/>
+            //-     <path d="M8.46345 11.154C8.32834 11.282 8.16834 11.346 7.98345 11.346C7.79856 11.346 7.63856 11.282 7.50345 11.154C7.36834 11.0189 7.30078 10.8553 7.30078 10.6633C7.30078 10.4713 7.36834 10.3113 7.50345 10.1833C7.63856 10.0482 7.79856 9.98068 7.98345 9.98068C8.16834 9.98068 8.32834 10.0482 8.46345 10.1833C8.59856 10.3113 8.66611 10.4713 8.66611 10.6633C8.66611 10.8553 8.59856 11.0189 8.46345 11.154ZM7.50345 3.66602H8.48478L8.33545 9.13802H7.65278L7.50345 3.66602Z" stroke="white"/>
+            //-   </svg>
+
+            //-   |Доставка будет осуществлена по выбранной точке на карте!
+
+          .form__wrapper-buttons
+            button.form__route-button.button.button--only-line(type="button" id="saveRouteDeliveryInput") Сохранить адрес
+      
+          .form__wrapper-list-maps
+            ul.list-kek
+
+
+        .route-map__interactive#route-map-delivery
+  //- Button-top
+  +buttonTop("main-basket")

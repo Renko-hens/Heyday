@@ -1,0 +1,41 @@
+include ../utils/mixins
+block variables
+
+doctype html
+html(
+  lang="ru"
+)
+  head
+    meta(
+      charset = "UTF-8"
+    )
+    meta(
+      name = "viewport", content = "width=device-width, initial-scale=1"
+    )
+    meta(
+      http-equiv = "X-UA-Compatible", content = "ie=edge"
+    )
+
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=31559afa-7e8d-46bc-8b82-4559092e3af2&lang=ru_RU" type="text/javascript">
+    </script>
+
+    <link rel="icon" type="image/png" href="favicon.png"/>
+    
+    meta(
+      name = "description", content = description
+    )
+
+    title #{title}
+    block head
+
+  body(
+    class = pageClass
+  )
+    include ../modules/header/header.pug
+    
+    main(
+      class = "main"
+    )
+      block content
+    
+    include ../modules/footer/footer.pug

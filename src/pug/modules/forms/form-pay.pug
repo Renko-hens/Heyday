@@ -1,0 +1,232 @@
+section.form-to-pay
+  .form-to-pay__container
+    form.form-to-pay__item.form(method="post" action="")
+      //- 
+      .form__wrapper.delivery#scrollLabelTarget
+        .form__wrapper-title
+          h2.form__title Способ доставки
+
+        .form__wrapper-radio-list
+          .form__wrapper-radio
+            input.form__radio(type="radio" id="deliveryMethodShipping" name="deliveryMethod" checked)
+            label.form__radio-label(for="deliveryMethodShipping") Доставка
+          
+          .form__wrapper-radio
+            input.form__radio(type="radio" id="deliveryMethodPickup" name="deliveryMethod")
+            label.form__radio-label(for="deliveryMethodPickup") Самовывоз
+
+        //- DELIVERY CHOOSE
+        .form__wrapper-route
+          label.form__input-route-wrap
+            input.form__route(type="text" name="route" value="Москва, Тверская, 4" onkeydown="return false;" style="caret-color: transparent !important;" autocomplete="new-password" required)
+            span.form__route-price Стоимость доставки: бесплатно
+
+          button.form__route-button.button.button--only-line(type="button") Указать адрес
+        
+
+        //- PICKUP CHOOSE
+        .form__wrapper-pickup.form__wrapper-pickup--hide#map--pickup
+          .map__address-wrapper
+            h3.map__information-title Адрес:
+
+            p.map__information-address 
+              |Москва, Тверская, 4 <br>
+              |(Вход магазина LUSH)
+          
+          .map__time-wrapper
+            h3.map__information-title Время работы:
+
+            p.map__information-time Ежедневно с 10:00 до 22:00
+          
+          .map__metro-wrapper
+            h3.map__information-title Ближайшие станции метро:
+
+            ul.map__information-metro
+              li.map__information-metro-item.map__information-metro-item--red
+                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.00019 0C4.02963 0 0 4.19304 0 9.36547C0 12.1701 1.17422 13.9992 1.17422 13.9992L16.8224 14C16.8224 14 18 12.001 18 9.36528C18 4.19304 13.9704 0 9.00019 0ZM16.1623 12.8591L1.86658 12.8526C1.86658 12.8526 1.10482 11.3657 1.10482 9.33593C1.10482 4.80249 4.65314 1.12714 9.03036 1.12714C13.4074 1.12714 16.9559 4.80229 16.9559 9.33593C16.9561 11.3886 16.1623 12.8591 16.1623 12.8591Z" />
+                  <path d="M11.544 2.48699L11.431 2.4868L9.0303 7.33575L6.54323 2.44539L3.13805 11.28H2.25804V11.9895H7.07904V11.28H6.12246L7.07904 8.51888L9.0303 11.9895L10.9052 8.51888L11.8616 11.28H10.9052V11.9895H15.6877V11.28H14.8592L11.544 2.48699Z"/>
+                </svg>
+                |Охотный ряд (4 минуты от метро)
+
+              li.map__information-metro-item.map__information-metro-item--green
+                <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.00019 0C4.02963 0 0 4.19304 0 9.36547C0 12.1701 1.17422 13.9992 1.17422 13.9992L16.8224 14C16.8224 14 18 12.001 18 9.36528C18 4.19304 13.9704 0 9.00019 0ZM16.1623 12.8591L1.86658 12.8526C1.86658 12.8526 1.10482 11.3657 1.10482 9.33593C1.10482 4.80249 4.65314 1.12714 9.03036 1.12714C13.4074 1.12714 16.9559 4.80229 16.9559 9.33593C16.9561 11.3886 16.1623 12.8591 16.1623 12.8591Z" />
+                  <path d="M11.544 2.48699L11.431 2.4868L9.0303 7.33575L6.54323 2.44539L3.13805 11.28H2.25804V11.9895H7.07904V11.28H6.12246L7.07904 8.51888L9.0303 11.9895L10.9052 8.51888L11.8616 11.28H10.9052V11.9895H15.6877V11.28H14.8592L11.544 2.48699Z" />
+                </svg>
+                |Театральная (13 минут от метро)
+
+        //- 
+        span.form__route-additionally Дополнительная информация для курьера
+
+        .form__wrapper-input-list
+          .form__wrapper-input.form__wrapper-input--half
+            input.form__input(id ="apartament" name="apartament" type="text")
+            label.form__label(for="apartament") Квартира
+            .form__bar
+          
+          .form__wrapper-input.form__wrapper-input--half
+            input.form__input(id ="ancient" name="ancient" type="text")
+            label.form__label(for="ancient") Подъезд
+            .form__bar
+          
+          .form__wrapper-input.form__wrapper-input--half
+            input.form__input(id ="doorPhone" name="doorPhone" type="text")
+            label.form__label(for="doorPhone") Домофон
+            .form__bar
+          
+          .form__wrapper-input.form__wrapper-input--half
+            input.form__input(id ="floor" name="floor" type="text")
+            label.form__label(for="floor") Этаж
+            .form__bar
+
+      //- 
+      .form__wrapper
+        .form__wrapper-title
+          h2.form__title Дата и время доставки
+
+        .form__wrapper-date-list
+          .form__block-date.flatpickr
+            input.form__date(type="text" name="date" placeholder="Дата доставки" readonly="readonly" data-input required)
+            .form__bar
+
+            button.form__date-button.form__date-button--open(type="button" title="toggle" data-toggle)
+              img(src="./assets/img/icons/calendar-icon.svg", alt="Кнопка открыть календарь")
+
+          .form__block-time
+            .form__wrapper-time.flatpickr
+              input.form__time(type="text" name="time" placeholder="Интервал доставки" readonly="readonly" data-input required)
+              .form__bar
+
+              button.form__time-button.form__time-button--open(type="button" title="toggle" data-toggle)
+                img(src="./assets/img/icons/calendar-time.svg", alt="Кнопка открыть календарь")
+              
+            label.form__wrapper-checkbox 
+              |Как можно скорее
+              input.form__checkbox(type="checkbox" id="hurryUpTime" name="hurryUpTime" checked)
+              span.form__checkmark
+
+      //- 
+      .form__wrapper
+        .form__wrapper-title
+          h2.form__title Ваши контактные данные
+
+        .form__wrapper-input-list
+          .form__wrapper-input.form__wrapper-input--half
+            input.form__input(id ="clientName" name="clientName" type="text"  minlength="1" maxlength="40"  required)
+            label.form__label(for="clientName") Имя*
+            .form__bar
+
+          .form__wrapper-input.form__wrapper-input--half
+            input.form__input(id ="clientPhone" name="clientPhone" type="tel" required)
+            label.form__label(for="clientPhone") Телефон*
+            .form__bar
+          
+          .form__wrapper-input
+            input.form__input(id ="clientEmail" name="clientEmail" type="email" autocomplete="off"  pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" required)
+            label.form__label(for="clientEmail") Электронный адрес*
+            .form__bar
+      
+      //- 
+      .form__wrapper.recipient
+        .form__wrapper-title
+          h2.form__title Получатель
+
+        .form__wrapper-radio-list
+          .form__wrapper-radio
+            input.form__radio(type="radio" id="recipientCustomer" name="recipient" checked)
+            label.form__radio-label(for="recipientCustomer") Заказчик (Я)
+          
+          .form__wrapper-radio
+            input.form__radio(type="radio" id="recipientOther" name="recipient" minlength="1" maxlength="40")
+            label.form__radio-label(for="recipientOther") Другой получатель
+            
+        .form__wrapper-input-list.form__wrapper-input-list--hide
+          .form__wrapper-input.form__wrapper-input--half
+            input.form__input(id ="recipientName" name="recipientName" type="text")
+            label.form__label(for="recipientName") Имя*
+            .form__bar
+
+          .form__wrapper-input.form__wrapper-input--half
+            input.form__input(id ="recipientPhone" name="recipientPhone" type="tel")
+            label.form__label(for="recipientPhone") Телефон*
+            .form__bar
+        
+        .form__wrapper-checkbox-list
+          label.form__wrapper-checkbox.form__wrapper-checkbox--hide#recipientAnonym
+            |Анонимная доставка
+            input.form__checkbox(type="checkbox" id="checkboxRecipientAnonym" name="checkboxRecipientAnonym")
+            span.form__checkmark
+          
+          label.form__wrapper-checkbox.form__wrapper-checkbox--hide#recipientCall
+            |Не звонить получателю при выезде курьера
+            input.form__checkbox(type="checkbox" id="checkboxReceip" name="checkboxReceip")
+            span.form__checkmark
+          
+          label.form__wrapper-checkbox 
+            |Добавить открытку
+            input.form__checkbox(type="checkbox" id="checkboxAddCart" name="checkboxAddCart")
+            span.form__checkmark
+
+        .form__wrapper-input-list.form__wrapper-input-list--hide#wrapperPostCard
+          .form__wrapper-input
+            input.form__input(id ="notePostCard" name="notePostCard" type="text")
+            label.form__label(for="notePostCard") Текст записки или открытки:
+            .form__bar
+
+
+      //- 
+      .form__wrapper
+        .form__wrapper-title
+          h2.form__title Дополнительно
+
+        .form__wrapper-input-list
+          .form__wrapper-input
+            input.form__input(id ="commentToOrder" name="commentToOrder" type="text")
+            label.form__label(for="commentToOrder") Комментарии к заказу
+            .form__bar
+
+
+      //- 
+      .form__wrapper
+        .form__wrapper-title
+          h2.form__title Способ оплаты
+
+        .form__wrapper-radio-list
+          .form__wrapper-radio
+            input.form__radio(type="radio" id="payCard" name="payMethod" checked)
+            label.form__radio-label(for="payCard") Картой
+          
+          .form__wrapper-radio
+            input.form__radio(type="radio" id="payCash" name="payMethod")
+            label.form__radio-label(for="payCash") Наличными при доставке
+
+        .form__wrapper-pays
+          //- visa 
+          .form__pay
+            img(src="./assets/img/icons/visa.svg", alt="Visa")
+          
+          //- mastercard
+          .form__pay
+            img(src="./assets/img/icons/mastercard.svg", alt="mastercard")
+          
+
+          //- qiwi
+          .form__pay
+            img(src="./assets/img/icons/qiwi.svg", alt="qiwi")
+
+          //- ya-money
+          .form__pay
+            img(src="./assets/img/icons/ya-money.svg", alt="ya-money")
+
+          //- gpay
+          .form__pay
+            img(src="./assets/img/icons/gpay.svg", alt="gpay")
+
+          //- applepay
+          .form__pay
+            img(src="./assets/img/icons/applepay.svg", alt="applepay")
+
+          //- sber
+          .form__pay
+            img(src="./assets/img/icons/sber.svg", alt="sber")

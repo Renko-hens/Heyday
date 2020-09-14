@@ -1,0 +1,64 @@
+extends ../layout/index
+
+block variables
+  - var title = "Заказ принят!";
+  - pageClass = ""
+
+block content
+  - var n = 0;
+
+  section.success-order
+    .success-order__container
+      .success-order__text-block
+        h2.success-order__title Спасибо, ваш заказ № принят!
+        p.success-order__description В ближайшее время с вами свяжется менеджер. Если у вас возникли какие-либо вопросы, вы можете связаться с нами по телефону. <br>
+        a.success-order__link-phone(href="tel:+74952343244") +7 495 234 32 44
+
+      .success-order__basket.main-basket.main-basket--success-order
+        ul.main-basket__list
+          each item in [0, 1, 2]
+            li.main-basket__card
+              .main-basket__card-item.main-basket__card-item--picture
+                img.main-basket__image(src="./assets/img/flowers/red/M.png", alt="M")
+                                  
+              .main-basket__wrapper-item
+                .main-basket__card-item.main-basket__card-item--text
+                  h3.main-basket__item-title Букет&nbsp;Yellow
+                
+                  p.main-basket__description
+                    span.main-basket__label Артикул 
+                    span.main-basket__value 123456
+                
+                  p.main-basket__description 
+                    span.main-basket__label Размер
+                    span.main-basket__value M
+
+                .main-basket__card-item.main-basket__card-item--count
+                    span.main-basket__label Кол-во
+                    span.main-basket__count 1
+
+                .main-basket__card-item.main-basket__card-item--price
+                  span.main-basket__label Сумма`
+                  span.main-basket__new-price 2000&nbsp;₽
+    
+      article.success-order__summary.summary.summary--success-order
+        .summary__container
+          .summary__wrapper-title
+            h2.form__title Итого
+
+          .summary__wrapper-information
+            .summary__information
+              span.summary__label Букетов (3)
+              span.summary__value 2000 ₽
+
+            .summary__information
+              p.summary__label Доставка
+              span.summary__value /бесплатно/
+
+            .summary__information  
+              span.summary__label Итого
+              span.summary__value 2000 ₽
+
+
+  //- Button-top
+  +buttonTop("mesh-advantages")

@@ -1,0 +1,93 @@
+$rem-baseline: 16px;
+
+body, html {
+  font-family: 'GraphikRegular', sans-serif;
+  line-height: 1.4;
+}
+
+@font-face { 
+  font-family: "GraphikRegular"; 
+  src: url("../../fonts/Grapchick/GraphikLCG-Regular.woff2") format("woff2"); 
+ }
+
+@font-face { 
+  font-family: "GraphikMedium"; 
+  src: url("../../fonts/Grapchick/GraphikLCG-Medium.woff2") format("woff2"); 
+ }
+ 
+ @font-face {
+  font-family: "Lovelace"; 
+  src: url("../../fonts/Lovelace/Lovelace-Medium.woff2") format("woff2"); 
+ }
+
+ @font-face {
+  font-family: "DalaFloda"; 
+  src: url("../../fonts/DalaFloda/DalaFloda-Medium-Cyr.woff2") format("woff2"); 
+ }
+
+// @media (--desktop-min-xl) {
+//   body, html {
+//     @include rem-baseline(120%);
+//   }
+// }
+
+// @media (--desktop-max-l) and (--desktop-min-l) {
+//   body, html {
+//     @include rem-baseline(110%);
+//   }
+// }
+
+// @media (--desktop-max-m) and (--desktop-min-m) {
+//   body, html {
+//     @include rem-baseline;
+//   }
+// }
+
+// @media (--tablet-max) and (--mobile-min-m) {
+//   body, html {
+//     @include rem-baseline(80%);
+//   }
+// }
+
+// @media (--mobile-max-s) {
+//   body, html {
+//     @include  rem-baseline(60%);
+//   }
+// }
+
+/* Fonts:
+   https://github.com/vedees/webpack-template/blob/master/README.md#import-js-files
+   ========================================================================== */
+
+   @import "mixins";
+
+   /*
+     Сhoose one of the ways:
+       1. handle menthod,
+       2. use mixin;
+   */
+   
+   // 1. Example handle menthod (without mixin):
+   
+   /*
+     // Base Helvetica (example):
+     @font-face {
+       font-family: "Helvetica-Base";
+       src: url('/assets/fonts/Helvetica/Base/Helvetica-Base.eot'); // IE9 Compat Modes
+       src: url('/assets/fonts/Helvetica/Base/Helvetica-Base.eot?#iefix') format('embedded-opentype'), // IE6-IE8
+            url('/assets/fonts/Helvetica/Base/Helvetica-Base.woff') format('woff'), // Pretty Modern Browsers
+            url('/assets/fonts/Helvetica/Base/Helvetica-Base.ttf')  format('truetype'), // Safari, Android, iOS
+            url('/assets/fonts/Helvetica/Base/Helvetica-Base.svg') format('svg'); // Legacy iOS
+     }
+   */
+   
+   // 2. Example with mixin (example):
+   // NOTE: do NOT use expansion (.woff, .svg etc) for path! Path will be '/assets/fonts/OpenSans/opensans';
+   // NOTE-2: files required: `.woff, .woffs` (by default) OR `eot. .woff, .woffs, .svg, .ttf` if you use another mixin;
+   
+   // Base OpenSans:
+   // @include font-face("OpenSans", "/assets/fonts/OpenSans/opensans");
+   // @include font-face("OpenSans", "/assets/fonts/OpenSans/opensanslight", 300);
+   // @include font-face("OpenSans", "/assets/fonts/OpenSans/opensanssemibold", 600);
+   // @include font-face("OpenSans", "/assets/fonts/OpenSans/opensansbold", bold);
+   

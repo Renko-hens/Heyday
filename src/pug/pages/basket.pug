@@ -1,0 +1,110 @@
+extends ../layout/index
+include ../utils/mixins.pug
+
+block variables
+  - var title = "Корзина";
+  - var description = "";
+  - pageClass = "basket"
+
+block content
+  - var n = 0;
+  include ../../mocks/flower.pug
+
+  section.main-basket#main-basket
+    .main-basket__container.container
+      .main-basket__information
+        a.main-basket__link(href="/") 
+          <svg width="32" height="12" viewBox="0 0 32 12" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0.46967 5.46967C0.176777 5.76256 0.176777 6.23744 0.46967 6.53033L5.24264 11.3033C5.53553 11.5962 6.01041 11.5962 6.3033 11.3033C6.59619 11.0104 6.59619 10.5355 6.3033 10.2426L2.06066 6L6.3033 1.75736C6.59619 1.46447 6.59619 0.989592 6.3033 0.696699C6.01041 0.403806 5.53553 0.403806 5.24264 0.696699L0.46967 5.46967ZM32 5.25L1 5.25L1 6.75L32 6.75L32 5.25Z"/>
+          </svg>
+          |К выбору цветов
+
+        .main-basket__block#scrollLabelTarget
+          h2.main-basket__title Корзина
+          ul.main-basket__list
+            each item in [0, 1, 2]
+              li.main-basket__card
+                .main-basket__card-item.main-basket__card-item--picture
+                  img.main-basket__image(src="./assets/img/flowers/red/M.png", alt="M")
+                                    
+                .main-basket__wrapper-item
+                  .main-basket__card-item.main-basket__card-item--text
+                    h3.main-basket__item-title Букет&nbsp;Yellow
+                  
+                    p.main-basket__description
+                      span.main-basket__label Артикул 
+                      span.main-basket__value 123456
+                  
+                    p.main-basket__description 
+                      span.main-basket__label Размер
+                      span.main-basket__value M
+
+                  .main-basket__card-item.main-basket__card-item--count
+                      span.main-basket__label Кол-во
+                      button.main-basket__operand.main-basket__operand--minus -
+                      span.main-basket__count 1
+                      button.main-basket__operand.main-basket__operand--plus +    
+
+                  .main-basket__card-item.main-basket__card-item--price
+                    span.main-basket__label Сумма
+                    span.main-basket__old-price 2398&nbsp;₽
+                    span.main-basket__new-price 2000&nbsp;₽
+
+                  .main-basket__controls
+                    button.main-basket__delete-button
+                      <svg width="17" height="40" viewBox="0 0 17 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path class="main-basket__delete-path main-basket__delete-path--head1" fill-rule="evenodd" clip-rule="evenodd" d="M5.40724 3.04761C5.40724 1.36446 6.78086 0 8.4753 0C10.1697 0 11.5434 1.36446 11.5434 3.04761V4.57142C11.5434 4.85194 11.3144 5.07935 11.032 5.07935C10.7496 5.07935 10.5207 4.85194 10.5207 4.57142V3.04761C10.5207 1.92551 9.60492 1.01587 8.4753 1.01587C7.34567 1.01587 6.42993 1.92551 6.42993 3.04761V4.57142C6.42993 4.85194 6.20099 5.07935 5.91858 5.07935C5.63618 5.07935 5.40724 4.85194 5.40724 4.57142V3.04761Z"/>
+                        <path class="main-basket__delete-path main-basket__delete-path--head2" d="M16.601 5.40229C16.5156 5.51855 16.3795 5.5873 16.2347 5.5873L0.717923 5.5873C0.573161 5.5873 0.437106 5.51862 0.35177 5.40246C-0.52257 4.21234 0.333167 2.53969 1.81638 2.53969H15.1357C16.6188 2.53969 17.4748 4.21193 16.601 5.40229Z" />
+                        <path class="main-basket__delete-path main-basket__delete-path--body" d="M14.5176 22.2364C14.3795 23.2468 13.5152 24 12.4939 24L4.45623 24C3.43493 24 2.57062 23.2468 2.43259 22.2364L0.384609 7.24537C0.34279 6.93926 0.581098 6.66667 0.89052 6.66667L16.0596 6.66667C16.3691 6.66667 16.6074 6.93926 16.5655 7.24537L14.5176 22.2364Z" />
+                      </svg>
+
+      //- summary
+      article.summary
+        .summary__container
+           form.summary__form.form
+            .summary__wrapper-title
+              h2.form__title Итого
+
+            .summary__wrapper-information
+              .summary__information
+                span.summary__label Букетов (3)
+                span.summary__value 2000 ₽
+
+              .summary__information
+                span.summary__label Вы экономите
+                span.summary__value 398 ₽
+
+              .summary__information
+                p.summary__label Доставка
+                  //- button.summary__delivery-button(type="button") Выбрать адрес доставки
+                span.summary__value /бесплатно/
+
+              .summary__information  
+                span.summary__label Итого
+                span.summary__value 2000 ₽
+
+            //- .form__wrapper-description
+            //-   p.form__description 
+            //-     |Введите номер карты лояльности или промокод для получения скидки. 
+            //-     a(href="/" title="Ват?") Оформить карту лояльности?
+
+            //- .form__wrapper-input
+            //-   input.form__input(id="formNumber" type="text")
+            //-   label.form__label(for="formNumber") Номер карты лояльности
+            //-   .form__bar
+
+
+            //- .form__wrapper-input
+            //-   input.form__input(id="formPromocode" type="text")
+            //-   label.form__label(for="formPromocode") Промокод
+            //-   .form__bar
+
+            .form__wrapper-controls
+              a(href="/registration.html").form__button.button Оформить заказ
+            
+            .summary__wrapper-public
+              p.summary__public Согласен с условиями 
+                a(href="/politics.html" title="Соглашение на обработку данных") Публичной оферты
+
+  //- Button-top
+  +buttonTop("main-basket")

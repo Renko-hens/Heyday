@@ -1,0 +1,47 @@
+.success-order {
+  margin-top: 90px;
+  padding: 0 16px;
+}
+
+.success-order__container {
+  max-width: 670px;
+  padding: 30px 0;
+  margin: 0 auto;
+}
+
+.success-order__text-block {
+  text-align: center;
+
+  font-family: "GraphikRegular", serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 32px;
+
+  @media (--mobile-max-m) {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+
+.success-order__title {  
+  font-family: "Lovelace", sans-serif;;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 56px;
+  
+  color: var(--main-theme-color);
+
+  
+  @media (--mobile-max-m) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.success-order__link-phone {
+  font-weight: bold;
+  color: var(--main-theme-color);
+}

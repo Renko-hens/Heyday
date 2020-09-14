@@ -1,0 +1,37 @@
+article.popup-basket.popup-basket--hide
+  .popup-basket__container.container
+    .popup-basket__block
+      button.button-close-popup 
+        <svg class="popup-basket__close-svg" width="32" height="32" fill="none">
+          <ellipse cx="8" cy="16" rx="1.5" ry="13"/>
+          <ellipse cx="24" cy="16" rx="1.5" ry="13"/>
+        </svg>
+
+      ul.popup-basket__list
+        each item in [0, 1, 2]
+          li.popup-basket__item
+            .popup-basket__picture
+              img(src="./assets/img/flowers/yellow/M.png", alt="M")
+            
+            .popup-basket__info
+
+              h3.popup-basket__title Букет Candy Bar
+
+              p.popup-basket__description
+                span.popup-basket__label Артикул 
+                span.popup-basket__value 123456
+              
+              p.popup-basket__description 
+                span.popup-basket__label Размер
+                span.popup-basket__value M
+
+              p.popup-basket__description
+                span.popup-basket__label Кол-во
+                span.popup-basket__value 1
+
+      .popup-basket__controls
+        .popup-basket__wrapper-links
+          a.button.popup-basket__link(href="/basket.html") Оформить заказ
+
+        .popup-basket__wrapper-button
+          button.popup-basket__button Продолжить покупки

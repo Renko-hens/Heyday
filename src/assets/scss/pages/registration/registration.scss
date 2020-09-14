@@ -1,0 +1,194 @@
+.route-map__controls .form__wrapper-input {
+  margin: 24px 0;
+}
+
+
+@media (--mobile-min-l) and (--tablet-max) {
+  .route-map__controls .warning-icon {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media(--mobile-max-m) {
+  .route-map__controls .warning-icon {
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
+
+// map
+.route-map{
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,.2);
+  background-color: var(--popup-bg-color);
+}
+
+.route-map--hide {
+  display: none;
+}
+
+.route-map__container {
+  position: relative;
+  background-color: #ffffff;
+  width: calc(100% - 120px);
+  max-width: var(--desktop-max-l);
+}
+
+@media(--tablet-max) {
+  .route-map__container {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media(--tablet-max) {
+  .route-map__container .button-close-popup {
+    left: 24px;
+    top: 24px;
+  }
+}
+
+.route-map__controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  display: flex;
+  width: calc(100% - 128px);
+  padding: 32px 64px;
+
+  background-color: var(--light-bg);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+@media(--tablet-max) {
+  .route-map__controls {
+    width: calc(100% - 32px);
+    padding: 24px 16px 28px;
+    border-radius: 0px 0px 21px 21px;
+  }
+}
+
+
+
+.form__wrapper-routes + .form__wrapper-buttons {
+  margin-left: 16px;
+}
+
+@media(--tablet-max) {
+  .form__wrapper-routes + .form__wrapper-buttons {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    margin-left: 0;
+  }  
+}
+
+// Маршрут
+
+.form__wrapper-routes {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  flex-grow: 1;
+}
+
+@media(--mobile-min-l) and (--tablet-max) {
+  .form__wrapper-routes {
+    margin-top: 66px;
+  }
+}
+
+@media(--mobile-min-m) and (--mobile-max-m) {
+  .form__wrapper-routes {
+    margin-top: 56px;
+  }
+}
+
+@media(--mobile-max-s) {
+  .form__wrapper-routes {
+    margin-top: 40px;
+  }
+}
+
+
+.form__wrapper-routes .form__input {
+  font-size: 16px;
+  width: calc(100% - 24px);
+  padding-right: 24px;
+  padding-bottom: 8px;
+}
+
+@media(--mobile-max-m) {  
+  .form__wrapper-routes .form__input {
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
+.route-map__interactive {
+  height: 80vh;
+}
+
+@media(--tablet-max) {
+  .route-map__interactive {
+    height: 100vh;
+  } 
+}
+
+.route-map__address-list {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  margin: 0 16px 0 -16px;
+}
+
+.route-map__address-item {
+  margin: 0 8px;
+} 
+
+.route-map__title {
+  margin-top: 0;
+}
+
+
+.form__wrapper-list-maps {
+  z-index: 1;
+  position: absolute;
+  background-color: #fff;
+  background-color: var(--light-bg);
+  width: 100%;
+  top: 100%;
+  left: 0;
+  
+  box-shadow: 0px 24px 20px rgba(0, 0, 0, 0.25);
+}
+
+@media(--tablet-max) {
+  .form__wrapper-list-maps {
+    top: calc(100% - 25px);
+
+    width: 100%;
+    padding: 0 0 25px;
+    border-radius: 0px 0px 25px 25px;
+  }
+}
+
+@media(--mobile-max-m) {
+  .form__wrapper-list-maps {
+    top: calc(100% - 20px);
+  }
+}

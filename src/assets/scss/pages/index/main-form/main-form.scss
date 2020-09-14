@@ -1,0 +1,17 @@
+.main__form {
+  margin-bottom: 170px;
+
+  @media(--mobile-max-m) {  
+    margin-bottom: 80px;
+  }
+}
+
+.main-form {
+  position: relative;
+}
+
+.main-form .main-form__container {
+  max-width: 647px;
+  margin: 0 auto;
+}
+

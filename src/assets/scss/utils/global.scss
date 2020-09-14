@@ -1,0 +1,176 @@
+* {
+  outline: none;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  color: var(--color-text);
+}
+
+section {
+  background-color: var(--main-bg-color);
+}
+
+ul {
+  margin: 0;
+  padding: 0; 
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark-color);
+  transition: color 0.2s;
+}
+
+a:hover,
+a:focus {
+  color: var(--main-theme-color);
+  transition: color 0.2s;
+}
+
+.container {
+  max-width: var(--desktop-max-m);
+  padding: 0 16px;
+  margin: 0 auto;
+};
+
+.title {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.button {
+  width: 166px;
+  height: 66px;
+  padding: 16px 8px;
+  border: 1px solid var(--main-theme-color);
+  border-radius: 44px;
+  color: var(--light-text);
+  background-color: var(--main-theme-color);
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  transition: all 0.2s;
+}
+
+.button:hover:not([disabled]),
+.button:focus:not([disabled]) {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
+.button:active {
+  filter: sepia(0.3);
+  transition: filter 0.2s;
+}
+
+.button:disabled {
+  filter: opacity(0.5);
+}
+
+.button--no-line {
+  border: none;
+  font-size: rem(12px); 
+  background-color: transparent;
+  padding: 0;
+  color: var(--button-color);
+}
+
+.button--no-line:hover,
+.button--no-line:focus {
+  border: none;
+  font-size: rem(12px); 
+  background-color: transparent;
+  padding: 0;
+  color: var(--button-color);
+}
+
+.button--only-line {
+  width: auto;
+  padding: 0px 24px;
+
+  font-size: 16px;
+  line-height: 24px;
+
+  border: 1px solid var(--main-theme-color);
+  color: var(--main-theme-color);
+  background-color: transparent;
+}
+
+// warning-icon
+.warning-icon {
+  display: flex;
+  align-items: center;
+
+  color: var(--main-theme-color);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.warning-icon svg {
+  margin-right: 8px;
+  min-width: 15px;
+}
+
+.warning-icon circle{
+  fill: var(--main-theme-color);
+  stroke: var(--svg-color);
+}
+
+// arrow-top
+.arrow-top {
+  position: fixed;
+  z-index: 1;
+  // top: 50%;
+  bottom: 24px;
+  right: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 66px;
+  height: 66px;
+  
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 50%;
+  border: 1px solid var(--main-theme-color);
+
+  // transform: translateY(-50%);
+  
+  transition: border var(--change-color), transform 0.2s;
+  
+  @media (--tablet-max){
+    top: auto;
+  }
+
+  @media (--tablet-max)  and (--mobile-min-m) {
+    width: 56px;
+    height: 56px;
+  }
+  
+  @media(--mobile-max-s) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.arrow-top:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
+.arrow-top svg {
+  transform: rotate(270deg);
+  fill: var(--main-theme-color);
+
+  transition: fill var(--change-color);
+
+  @media(--mobile-max-s) {
+    transform: scale(0.7) rotate(270deg);
+  }
+}
+

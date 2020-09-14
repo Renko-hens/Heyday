@@ -1,0 +1,87 @@
+:root {
+  // sizes max-width
+  --desktop-max-xl: 2560px;
+  --desktop-min-xl: 1981px;
+
+  --desktop-max-l: 1980px;
+  --desktop-min-l: 1581px;
+
+  --desktop-max-m: 1580px;
+  --desktop-min-m: 1261px;
+
+  --desktop-max-s: 1260px;
+  --desktop-min-s: 1025px;
+
+  --tablet-max: 1024px;
+  --tablet-min: 769px;
+
+  --mobile-max-l: 768px;
+  --mobile-min-l: 541px;
+
+  --mobile-max-m: 540px;
+  --mobile-min-m: 481px;
+
+  --mobile-max-s: 480px;
+  --mobile-min-s: 320px;
+
+  --mobile-max-xs: 319px;
+  --mobile-min-xs: 54px;
+
+  // color
+  --red: #98001F;
+  --pink: #E765AB;
+  --cream: #F8988A;
+  --orange: #FB710F;
+  --yellow: #F3BF04;
+  --green: #9FD013;
+  --blue: #7573F3;
+  --purple: #BD7AF1;
+  --candy-bar: #FB88B7; 
+
+  --gradient-hot-pink: linear-gradient(138.86deg, #FE338F -21.55%, #BF66E9 123.71%);
+  --hot-pink: #FE338F;
+  --gradient-fuchsia: linear-gradient(133.81deg, #BF66E9 -29.48%, #97B7E8 127.46%);
+  --fuchsia: #BF66E9;
+  
+  --black-pack: #333333;
+  
+  
+  --multi-3: #E665AB;
+  
+  --dark: #333333;
+  --gray: #e6e6e6;
+
+  --main-theme-gradient: ;
+  --main-theme-color: var(--red);
+  --main-bg-color: #F9F9F9;
+  --popup-bg-color: rgba(0, 0, 0, 0.2);
+
+  --color-text: #757575;
+  --light-text: #ffffff;
+  --title-color: #6E6763;
+
+  --input-text-color: #4F4F4F;
+  
+  // Button color
+  --button-color: var(--main-theme-color);
+
+  // svg color 
+  --svg-color: #ffffff;
+  --svg-color-active: var(--main-theme-color);
+
+  // border
+  --border-color: #DEDEDF;
+
+  // bg
+  --light-bg: #ffffff;
+
+  // time
+  --change-color: 0.3s;
+
+
+  // error
+  --error-color: #EB5757;
+
+  // input
+  --input-disabled: #C1C1C1;
+};

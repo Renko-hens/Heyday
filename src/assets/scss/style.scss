@@ -1,0 +1,45 @@
+@import '~normalize.scss';
+
+// Mixins
+@import '~sass-rem';
+
+// Utils styles
+@import 'utils/global.scss';
+@import 'utils/variables.scss';
+@import 'utils/mixins.scss';
+@import 'utils/fonts.scss'; 
+@import 'utils/breakpoints.scss';
+
+// Swiper
+@import '../../../node_modules/swiper/css/swiper.min.css';
+@import 'utils/swiper.scss';
+
+// Modules
+@import 'modules/forms/forms.scss';
+@import 'modules/header/header.scss';
+@import 'modules/footer/footer.scss';
+
+// Templates
+@import 'templates/popup-basket/popup-basket.scss';
+@import 'templates/popup-success/popup-success.scss';
+
+// Main Index Page
+@import 'pages/index/hero-image/hero-image.scss';
+// @import 'pages/index/sale-block/sale-block.scss';
+@import 'pages/index/features/features.scss';
+@import 'pages/index/main-form/main-form.scss';
+@import 'pages/index/social-gallery/social-gallery.scss';
+@import 'pages/index/shipping/shipping.scss';
+@import 'pages/index/map/map.scss';
+
+// Basket Page
+@import 'pages/basket/main-basket/main-basket.scss';
+@import 'pages/registration/registration.scss';
+
+@import 'pages/success-order/success-order.scss';
+
+// Review Page
+@import 'pages/review/review.scss';
+
+// Page
+@import 'pages/politics-and-offer/politics-and-offer.scss';

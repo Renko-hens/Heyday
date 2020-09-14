@@ -1,0 +1,37 @@
+article.popup-success.popup-success--hide
+  .popup-success__container.container
+    .popup-success__block
+      button.button-close-popup 
+        <svg class="popup-basket__close-svg" width="32" height="32" fill="none">
+          <ellipse cx="8" cy="16" rx="1.5" ry="13"/>
+          <ellipse cx="24" cy="16" rx="1.5" ry="13"/>
+        </svg>
+
+      .popup-succes__information
+        <svg width="108" height="108" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g filter="url(#filter0_d)">
+            <circle cx="54" cy="50" r="49.5" stroke="#7573F3" stroke-dasharray="5 8"/>
+            <path fill="#fff" d="M29 25h50v50H29z"/>
+            <path class="flower-path" fill-rule="evenodd" clip-rule="evenodd" d="M45.2 39.9A7.5 7.5 0 0147.8 29l5.9-3.2h.7l5.8 3.2a7.5 7.5 0 012.5 11A7.5 7.5 0 0174 39l4.9 4.6c.2.2.2.4.2.7l-1.3 6.5a7.5 7.5 0 01-9.6 5.8 7.5 7.5 0 014.4 10.3l-3 6c0 .3-.2.5-.5.5l-6.6.8a7.5 7.5 0 01-8.5-7.5 7.5 7.5 0 01-8.4 7.5l-6.7-.9a.8.8 0 01-.5-.4l-2.9-6a7.5 7.5 0 014.4-10.3 7.5 7.5 0 01-9.6-5.8L29 44.2c0-.3 0-.5.2-.7l4.9-4.6a7.5 7.5 0 0111.1 1z" fill="#7573F3"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M62 47.9zm-9 9.6l8.5-8.7a1.2 1.2 0 00-1.8-1.8L52.1 55l-4-4a1.2 1.2 0 10-1.8 1.7l5 4.9c.4.4 1.2.4 1.7 0z" fill="#fff"/>
+          </g>
+          <defs>
+            <filter id="filter0_d" x="0" y="0" width="108" height="108" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+              <feOffset dy="4"/>
+              <feGaussianBlur stdDeviation="2"/>
+              <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+              <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
+              <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+            </filter>
+          </defs>
+        </svg>
+
+        .popup-succes__text-block
+          h2.popup-succes__title Спасибо, <br> ваша заявка принята!
+          p.popup-succes__description Наши менеджеры свяжутся с вами в течение нескольких минут для уточнения всех деталей. Если у вас возникли вопросы, звоните 
+            a.popup-succes__link-phone(href="tel:+74952343244") +7 495 234 32 44
+
+      .popup-success__controls
+        button.popup-success__button.button Хорошо
